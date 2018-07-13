@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Components</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/jquery"></script>
+
+  <style>
+        .product-list h2 {
+            margin-bottom: 40px;
+        }
+        .product-list ul img {
+            float: left;
+            width: 300px;
+        }
+        .product-list ul {
+            list-style-type: none;
+        }
+        .product-list li {
+            margin-bottom: 40px;
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <product-list :products="theProducts"  title="Best Sellers"></product-list>
+    </div>
+            
+    <script>
+        Vue.component('product-list', {
+            template: '\
+                <div class="product-list">\
+                       <h2>{{title}}</h2>\
+                        <ul>\
+                            <li v-for="product in products">\
+                                <img v-bind:src="product.image">\
+                                <p><strong>{{product.name}}</strong></p>\
+                                <p>{{product.description}}</p>\
+                            </li>\
+                        </ul>\
+                </div>',
+            props: ['title', 'products']
+        });
+            
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                theProducts: []
+                },
+                created: function() {
+                    $.getJSON('https://hplussport.com/api/products')
+                        .done(function(data) {
+                            vm.theProducts = data; 
+                    });
+                }
+            });
+    </script>
+            
+</body>
+</html>

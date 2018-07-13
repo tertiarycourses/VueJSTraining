@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Components</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <welcome></welcome>
+    </div>
+
+  <script>
+     Vue.component('welcome', {
+        template: '<div>\
+            <hello></hello>\
+            <h1>Welcome to Vue JS Training</h1></div>' 
+        })
+
+    Vue.component('hello', {
+        template: '<h1>Hello World</h1>'
+        })
+    var vm = new Vue({
+        el: '#app'
+        })
+  </script>
+</body>
+</html>

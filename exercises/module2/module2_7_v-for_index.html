@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+
+        <div v-for="(interest,index) in interests">
+                <input type="checkbox" v-model="selectedInterests" v-bind:value="interest.id">
+                {{index+1}}, {{interest.name}}
+        </div>
+
+        <p>You selected: {{selectedInterests.join(', ')}}</p>
+
+        </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                interests: [
+		       {
+		           id: 1,
+		           name: 'Running'
+		       },
+		       {
+		           id: 2,
+		           name: 'Cycling'
+		       },
+		       {
+		           id:3,
+		           name: 'Swimming'
+		       }
+	       ],
+                selectedInterests: []
+            }
+        })
+    </script>
+</body>
+</html>

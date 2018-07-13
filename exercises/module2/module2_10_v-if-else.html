@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-if="num > 4">You ate {{num}} durians. That is a lot</span>
+        <span v-else-if="num > 0">You ate {{num}} durians</span>
+        <span v-else>You have not eaten durian</span>
+
+    </div>
+
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num: 1
+        }
+    })
+  </script>
+</body>
+</html>

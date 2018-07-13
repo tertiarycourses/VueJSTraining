@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h1> v-bind Demo</h1>
+    <a href={{url}} target = "_blank">Click 1 </a> <br/>
+    <a v-bind:href="url" target = "_blank">Click 2 </a> <br/>
+    <a v-bind:href="url + '?myParam=1'">Click3</a>
+
+    <br/><br/><br/>
+    <form>
+      Name : <input type='text' value={{name}}><br/>
+      Name : <input type='text' v-bind:value="name">
+    </form>
+
+    <br/><br/><br/>
+    <span v-bind:title="message">
+      Hover your mouse over me!
+    </span>
+  </div>
+
+  <script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            url : "http://www.google.com",
+            name : "Alfred",
+            message : 'Hello World'
+         }
+    })
+  </script>
+</body>
+</html>

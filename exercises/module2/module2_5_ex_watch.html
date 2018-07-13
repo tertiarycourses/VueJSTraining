@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Directives</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+   <body>
+      <div id = "app">
+         Celius : <input type = "text" v-model = "celius">
+         Fahrenheit : <input type = "text" v-model = "fahrenheit">
+      </div>
+      <script type>
+         var vm = new Vue({
+            el: '#app',
+            data: {
+                celius : 0,
+                fahrenheit:32
+            },
+            watch : {
+               celius:function(val) {
+                  this.celius = val;
+                  this.fahrenheit = (val*9/5)+32;
+               },
+               fahrenheit : function (val) {
+                  this.celius = (val-32)*5/9;
+                  this.fahrenheit = val;
+               }
+            }
+         });
+      </script>
+   </body>
+</html>

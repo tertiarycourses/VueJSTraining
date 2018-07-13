@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transition and Animation</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+        .shiftx-enter-active, .shiftx-leave-active {
+           transition: all 2s ease-in-out;
+        }
+        .shiftx-enter, .shiftx-leave-to  {
+           transform : translateX(400px);
+           transform : scale(0.5)
+        }
+     </style>
+</head>
+<body>
+    <div id = "app">
+        <button v-on:click = "show = !show">Click Me</button>
+        <transition name = "shiftx">
+            <p v-show = "show">
+                <img src = "img.jpg" style = "width:100px;height:100px;" />
+            </p>
+        </transition>
+    </div>
+    <script type = "text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show:true
+            },
+            methods : {
+            }
+        });
+    </script>
+</body>
+</html>

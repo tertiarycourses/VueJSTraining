@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+
+
+        <div v-for="i in 10">{{i}}</div>
+        <div v-for="i in interests">{{i}} </div>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                interests: ['Running','Cycling','Swimming']
+            }
+        })
+    </script>
+</body>
+</html>
+
+

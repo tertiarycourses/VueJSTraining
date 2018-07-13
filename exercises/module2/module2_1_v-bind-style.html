@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <span v-bind:style="fancyDiv">
+            Hello World!
+        </span>
+    </div>
+    
+    <script>
+        new Vue({
+           el: '#app',
+           data: {
+               fancyDiv: {
+                   backgroundColor: 'lightgrey',
+                   borderRadius: '10px',
+                   padding: '10px',
+                   marginTop: '30px'
+               }
+           }
+        });
+    </script>
+</body>
+</html>

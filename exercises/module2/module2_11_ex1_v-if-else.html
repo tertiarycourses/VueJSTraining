@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+
+        <div v-for="(interest,index) in interests">
+                <input type="checkbox" v-model="selectedInterests" v-bind:value="interest.name">
+                {{index+1}}, {{interest.name}}
+        </div>
+
+        <p v-if="selectedInterests.length == 3">You must be very active!</p>
+		<p v-else-if="selectedInterests.length > 0">You selected: {{selectedInterests.join(', ')}}</p>
+        <p v-else>Please select at least one interest.</p>
+        <div v-for="interest in interests">
+                {{interest.id}} {{interest.name}}
+        </div>
+
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                        interests: [
+                       {
+                           id: 1,
+                           name: 'Running'
+                       },
+                       {
+                           id: 2,
+                           name: 'Cycling'
+                       },
+                       {
+                           id:3,
+                           name: 'Swimming'
+                       }
+                   ],
+                    selectedInterests: []
+                }
+            })
+        </script>
+</body>
+</html>

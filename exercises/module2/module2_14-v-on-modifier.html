@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+        <div id="app">  
+                <form>
+                    <button v-if="!loggedIn" v-on:click.prevent="logIn('Mike')">Log in</button>  
+                    <button v-else v-on:click.prevent="logOut">Log out</button>{{msg}}    
+                </form>
+        </div>
+            
+        <script>
+                new Vue({
+                   el: '#app',
+                   data: {
+                       msg: '' ,
+                       loggedIn: false
+                   },
+                   methods: {
+                       logIn: function(username) {
+                           this.loggedIn = true;
+                           this.msg = 'Welcome, ' + username + '!';
+                       },
+                       logOut: function() {
+                           this.loggedIn = false;
+                           this.msg = 'So long!';
+                       }
+                   }
+                });
+        </script>
+</body>
+</html>
+

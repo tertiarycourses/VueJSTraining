@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Directives</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+      <div id = "app">
+         <button v-on:click = "answer">Show Answer</button>
+         <h2>100 + 200 = {{total}}</h2>
+      </div>
+      <script>
+         var vm = new Vue({
+            el: '#app',
+            data: {
+               num1: 100,
+               num2 : 200,
+               total : ''
+            },
+            methods : {
+               answer : function() {
+                  return this.total =  this.num1+ this.num2;
+               }
+            },
+         });
+      </script>
+   </body>
+</html>

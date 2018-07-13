@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <form method="post" action="/">
+            <input type="checkbox"  value="Running"> Running
+            <input type="checkbox"  value="Cycling"> Cycling
+            <input type="checkbox"  value="Swimming"> Swimming
+            <p>You selected: {{selectedInterests.join(', ')}}</p>
+         </form>
+    </div>
+              
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                email: '',
+                selectedInterests: []
+                   }
+            });
+    </script>
+</body>
+</html>
