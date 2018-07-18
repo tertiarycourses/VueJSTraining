@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Components</title>
+  <title>Module 3: Components</title>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
-        <grocery v-bind:grocerylist="todoList"></grocery>
+        <grocery v-bind:grocerylist="groceryList"></grocery>
     </div>
 
   <script>
@@ -16,24 +16,20 @@
         template: '<div>\
             <h1>To Do List:</h1>\
             <ol>\
-                <todo-item v-for="item in grocerylist" v-bind:todo="item" v-bind:key="item.id"></todo-item>\
+                <grocery-item v-for="item in grocerylist" v-bind:todo="item""></grocery-item>\
             </ol>\
             </div>'
         })
 
-    Vue.component('todo-item', {
+    Vue.component('grocery-item', {
         props: ['todo'],
-        template: '<li>{{ todo.text }}</li>'
+        template: '<li>{{ todo }}</li>'
         })
     
     var vm = new Vue({
         el: '#app',
         data: {
-            todoList: [
-            { id: 0, text: 'Buy Groceries' },
-            { id: 1, text: 'Buy Lunch' },
-            { id: 2, text: 'Watch Movie' }
-            ]
+            groceryList: ['Milk','Bread','Kaya']
         }
     })
   </script>

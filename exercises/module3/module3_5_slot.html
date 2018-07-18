@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Components</title>
+  <title>Module 3: Components</title>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
-        <hello>Hello Alfred</hello>
-        <hello>Hello Ally</hello>
-        <hello>Hello Jane</hello>
+        <hello>Alfred</hello>
+        <hello>Ally</hello>
+        <hello>Jane</hello>
         <hello></hello>
     </div>
 
   <script>
     Vue.component('hello', {
-        template: '<h1><slot>Participant name</slot></h1>'
+        template: '<h1>Hello <slot>name</slot></h1>'
         })
     var vm = new Vue({
         el: '#app'

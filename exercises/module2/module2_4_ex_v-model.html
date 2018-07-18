@@ -7,9 +7,9 @@
 <body>
     <div id="app">
         <form method="post" action="/">
-            <input type="checkbox"  value="Running"> Running
-            <input type="checkbox"  value="Cycling"> Cycling
-            <input type="checkbox"  value="Swimming"> Swimming
+            <input type="checkbox"  v-model="selectedInterests" value="Running"> Running
+            <input type="checkbox"  v-model="selectedInterests" value="Cycling"> Cycling
+            <input type="checkbox"  v-model="selectedInterests" value="Swimming"> Swimming
             <p>You selected: {{selectedInterests.join(', ')}}</p>
          </form>
     </div>

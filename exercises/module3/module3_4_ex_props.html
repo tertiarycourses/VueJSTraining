@@ -13,19 +13,14 @@
     </div>
 
   <script>
-    Vue.component('todo-item', {
+    Vue.component('todo-item',{
         props: ['todo'],
-        template: '<li>{{ todo.text }}</li>'
-        })
-    
+        template: '<li>{{todo}}</li>'
+    })
     var app = new Vue({
         el: '#app',
         data: {
-            todoList: [
-            { id: 0, text: 'Buy Groceries' },
-            { id: 1, text: 'Buy Lunch' },
-            { id: 2, text: 'Watch Movie' }
-            ]
+            todoList: ['Buy Groceries','Buy Lunch','Watch Movie']
         }
     })
   </script>

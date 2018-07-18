@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Directives</title>
+  <title>Module 2: Directives</title>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
 
         <div v-for="(interest,index) in interests">
-                <input type="checkbox" v-model="selectedInterests" v-bind:value="interest.name">
-                {{index+1}}, {{interest.name}}
+                <input type="checkbox" v-model="selectedInterests" v-bind:value="interest">
+                {{index+1}}, {{interest}}
         </div>
 
 		<p v-show="selectedInterests.length > 0">You selected: {{selectedInterests.join(', ')}}</p>
@@ -20,20 +20,7 @@
             var vm = new Vue({
                 el: '#app',
                 data: {
-                        interests: [
-                       {
-                           id: 1,
-                           name: 'Running'
-                       },
-                       {
-                           id: 2,
-                           name: 'Cycling'
-                       },
-                       {
-                           id:3,
-                           name: 'Swimming'
-                       }
-                   ],
+                    interests: ['Running','Cycling','Swimming'],
                     selectedInterests: []
                 }
             })

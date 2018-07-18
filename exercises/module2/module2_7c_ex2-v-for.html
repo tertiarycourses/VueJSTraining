@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Directives</title>
+  <title>Module 2: Directives</title>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -10,10 +10,9 @@
         <div v-for="interest in interests">
                 <input type="checkbox" v-model="selectedInterests" v-bind:value="interest">{{interest}}
         </div>
-
         <p>You selected: {{selectedInterests.join(', ')}}</p>
 
-        </div>
+    </div>
 
     <script>
         var vm = new Vue({

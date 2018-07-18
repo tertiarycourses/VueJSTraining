@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Directives</title>
+  <title>Module 2: Directives</title>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
         <h1>To Do List</h1>
         <ol>
-          <li v-for="items in todo">
-            {{ items.text }}
-          </li>
+          <li v-for="item in todo">{{item}}</li>
         </ol>
     </div>
 
@@ -18,11 +16,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                todo: [
-                    { text: 'Buy Groceries' },
-                    { text: 'Buy Lunch' },
-                    { text: 'Watch Movie' }
-                ]
+                todo: ['Buy Groceries','Buy Lunch','Watch Movie']
             }
         })
     </script>
