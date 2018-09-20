@@ -6,29 +6,20 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ greet() }}</h1>
-    <h1>{{ info() }}</h1>
+    <h1>Celsius: {{ Celsius }}</h1>
+    <h1>Fahrenheit: {{ Fahrenheit }}</h1>
   </div>
+
 
   <script>
     var vm = new Vue({
       el: '#app',
       data: {
-        first_name: "Ally",
-        last_name: "Tan",
-        gender: 'Female'
-        },
-      computed : {
-        name: function() {
-        return this.first_name + " " + this.last_name;
-          }
-        },
-      methods: {
-        greet : function() {
-            return "Hello, My name is "+this.name;
-        },
-        info: function() {
-            return "I am a " + this.gender
+        Celsius: 30
+      },
+      computed: {
+        Fahrenheit: function() {
+            return this.Celsius*9/5+32
         }
       }
     })

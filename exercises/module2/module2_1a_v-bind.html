@@ -6,21 +6,31 @@
 </head>
 <body>
   <div id="app">
-    <h1> v-bind Demo</h1>
-    <a href={{url}} target = "_blank">Click 1 </a> <br/>
-    <a v-bind:href="url" target = "_blank">Click 2 </a> <br/>
-    <a v-bind:href="url + '?myParam=1'">Click3</a>
+
+    <h1> v-bind title</h1>
+    <span title={{date}}>
+        Hover your mouse over me to see the date and time. Not working.
+    </span><br/>
+    <span v-bind:title="date">
+        Hover your mouse over me to see the date and time. Working
+    </span>
+
+      <br/><br/><br/>
+
+    <h1> v-bind url</h1>
+    <a href={{url}} target = "_blank">Search 1 </a> <br/>
+    <a v-bind:href="url" target = "_blank">Search 2</a> <br/>
+    <a v-bind:href="url + '?q=cat'">Search Cat</a><br/>
+    <a :href="url + '?q=dog'">Search Dog</a>
 
     <br/><br/><br/>
+    <h1> v-bind value</h1>
     <form>
       Name : <input type='text' value={{name}}><br/>
-      Name : <input type='text' v-bind:value="name">
+      Name : <input type='text' :value="name">
     </form>
 
-    <br/><br/><br/>
-    <span v-bind:title="message">
-      Hover your mouse over me!
-    </span>
+
   </div>
 
   <script>
@@ -28,8 +38,8 @@
         el: '#app',
         data: {
             url : "http://www.google.com",
-            name : "Alfred",
-            message : 'Hello World'
+            name : "Enter your name",
+            date : 'The time now is ' + new Date().toLocaleString()
          }
     })
   </script>
