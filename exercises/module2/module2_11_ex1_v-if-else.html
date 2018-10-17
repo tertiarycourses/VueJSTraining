@@ -7,10 +7,10 @@
 <body>
     <div id="app">
 
-        <div v-for="(interest,index) in interests">
-                <input type="checkbox" v-model="selectedInterests" v-bind:value="interest">
-                {{index+1}}, {{interest}}
-        </div>
+        <input type="checkbox" v-model="selectedInterests" value="Running"> Running
+        <input type="checkbox" v-model="selectedInterests" value="Cycling"> Cycling
+        <input type="checkbox" v-model="selectedInterests" value="Swimming"> Swimming
+
 
         <p v-if="selectedInterests.length == 3">You must be very active!</p>
 		<p v-else-if="selectedInterests.length > 0">You selected: {{selectedInterests.join(', ')}}</p>

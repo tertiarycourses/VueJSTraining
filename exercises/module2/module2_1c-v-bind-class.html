@@ -4,33 +4,43 @@
   <title>Module 2: Directives</title>
   <script src="https://unpkg.com/vue"></script>
   <style>
-        .square {
-             width: 200px;
-             height: 200px;
-             margin-bottom: 20px;
-        }
-        .blue {
-            background-color: blue;
-        }
-        .red {
-            background-color: red;
-        }
-
+<style>
+  .salmon {
+    background-color:lightsalmon;
+    border-radius: 25px;
+    padding:10px;
+    margin: 30px;
+    font-family: 'Roboto'
+  }
+  .pink {
+    background-color:lightpink;
+    border-radius: 25px;
+    padding:10px;
+    margin: 30px;
+    font-family: 'Roboto'
+  }
     </style>
 </head>
 <body>
 
     <div id="app">
-            <div class="square" v-bind:class="{blue: cold, red: hot}"></div>
+            <h1 :class='{salmon:salmon,pink:pink}'>{{welcome()}}</h1>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                cold: true,
-                hot: false
+                name: 'Ally',
+                salmon: true,
+                pink: false
+                },
+            methods: {
+                welcome: function() {
+                    return 'Hello ' + this.name;
                 }
-            });
+            }
+            })
+
     </script>
 
 </body>

@@ -8,7 +8,7 @@
 
     <div id="app">
 
-        <span v-bind:style="fancyDiv">
+        <span v-bind:style="fancy">
             Hello World!
         </span>
     </div>
@@ -17,7 +17,7 @@
         new Vue({
            el: '#app',
            data: {
-               fancyDiv: {
+               fancy: {
                    backgroundColor: 'lightgrey',
                    borderRadius: '10px',
                    padding: '10px',

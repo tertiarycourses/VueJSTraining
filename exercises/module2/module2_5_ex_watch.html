@@ -5,24 +5,24 @@
     </head>
    <body>
       <div id = "app">
-         Celius : <input type = "text" v-model = "celius">
-         Fahrenheit : <input type = "text" v-model = "fahrenheit">
+         Celsius : <input type = "text" v-model.number.lazy = "celsius">
+         Fahrenheit : <input type = "text" v-model.number.lazy = "fahrenheit">
       </div>
       <script type>
          var vm = new Vue({
             el: '#app',
             data: {
-                celius : 0,
-                fahrenheit:32
+                celsius : 0,
+                fahrenheit:0
             },
             watch : {
-               celius:function(val) {
-                  this.celius = val;
-                  this.fahrenheit = (val*9/5)+32;
+               celsius:function(val) {
+                  this.celsius = val;
+                  this.fahrenheit = Math.round(val*9/5+32);
                },
                fahrenheit : function (val) {
-                  this.celius = (val-32)*5/9;
                   this.fahrenheit = val;
+                  this.celsius = Math.round((val-32)*5/9);  
                }
             }
          });

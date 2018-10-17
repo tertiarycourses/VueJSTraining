@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Module 2: Directives</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+            <p> Celsius: <input type='text' v-model.number= "celsius"> </p>
+            <p> Fahrenheit: {{ fahrenheit }} </p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data: {
+                celsius: 30
+            },
+            computed: {
+                fahrenheit: function() {
+                    return this.celsius*9/5 + 32;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+
+
+
+</html>
